@@ -1,0 +1,3 @@
+- lit mes comentaires et retravaille sur le code
+- Un envoi de codes doit etre accompagner de tests (manuel avec une classe Main, ou automatique avec Junit), car si tu avais tester ton code, tu aurais constaté beaucoup de bugs  
+- je te donnerai 5/10

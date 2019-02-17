@@ -1,5 +1,7 @@
 package fr.binazon.projectNow17022019;
 
+// Il sera preferrable que cette classe soit abstraite car un client c'est soit une entreprise avec son "numSIRET"
+// ou un Particulier avec son "prenom"
 public class Client {
 	private String nom;
 	private String adresse;

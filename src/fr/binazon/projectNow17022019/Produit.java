@@ -1,10 +1,12 @@
 package fr.binazon.projectNow17022019;
 
-
+// il ya un couplage fort entre TypeProduit et Produit, donc faufdrai songer à appliquer le principe d'inversion de dépendances
+// Produit est ouvert au modification, pourtant il ne devrait pas l'etre.
 public class Produit {
 	private String code;
 	private String libelle;
 	private float prixHT;
+	// "typeProduit" n'est instancié null part, donc y aura sans doute un NullPointerException à l'éxecution
 	private TypeProduit typeProduit;
 	/**
 	 * 
@@ -44,6 +46,9 @@ public class Produit {
 		this.prixHT = prixHT;
 	}
 	
+	// revoir cette méthode
+	// si le tauxTVA est uniforme pour n'importe quel produit, alors on n'aura pas besoin de "TypeProduit" dans cette classe
+	// La classe qui definira la tauxTva lira dans un fichier de config et devra etre un Singleton
 	public float prixTTC() {
 		return prixHT+typeProduit.getTauxTVA();
 	}
