@@ -1,11 +1,10 @@
 package fr.binazon.projectNow17022019.test;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Date;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.Before;
+import org.junit.Test;
 
 import fr.binazon.projectNow17022019.Client;
 import fr.binazon.projectNow17022019.Facture;
@@ -21,7 +20,7 @@ class TestApplication1 {
 	private Client client1;
 	private Facture facture;
 	
-	@BeforeEach
+	@Before
 	void setUp() throws Exception {
 		client1 = new Particulier("nzuguem", "kevin");
 		produit1 = new Produit();
