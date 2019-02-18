@@ -13,7 +13,6 @@ public class Particulier extends Client {
 	 */
 	public Particulier() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	/**
@@ -22,7 +21,6 @@ public class Particulier extends Client {
 	 */
 	public Particulier(String nom, String adresse) {
 		super(nom, adresse);
-		// TODO Auto-generated constructor stub
 	}
 
 	public String getPrenom() {
@@ -32,6 +30,4 @@ public class Particulier extends Client {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	
-	
 }

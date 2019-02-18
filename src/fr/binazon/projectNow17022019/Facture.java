@@ -3,22 +3,26 @@ package fr.binazon.projectNow17022019;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import fr.binazon.projectNow17022019.Produit;
+import fr.binazon.projectNow17022019.Client;
 
-// cette classe n'est pas bonne du point de vue conception car les données et les traitements se trouvent au meme endroits
-// Car pour un meme service, on peut avoir plusieurs implémentations différents selon le contexte
-// null part du renseigne le client qui est reponsable de la facture
-// et c'est pareil sur ton DCA, une facture c'est pour un client et non pour plusieurs clients.
-// le DCA peut etre accepter mais le choix d'implémentaion doit etre different
 public class Facture {
 	private int numero;
 	private Date date;
 	private List<Produit> produits;
+	private Client client;
+	
+	
+	public Facture() {
+		super();
+	}
 	public Facture(int numero, Date date) {
 		super();
 		this.numero = numero;
 		this.date = date;
 		produits = new ArrayList<Produit>();
 	}
+	
 	public int getNumero() {
 		return numero;
 	}
@@ -31,9 +35,17 @@ public class Facture {
 	public void setDate(Date date) {
 		this.date = date;
 	}
-	public Facture() {
-		super();
-		// TODO Auto-generated constructor stub
+	public List<Produit> getProduits() {
+		return produits;
+	}
+	public void addProduit(Produit produit) {
+		produits.add(produit);
+	}
+	public Client getClient() {
+		return client;
+	}
+	public void setClient(Client client) {
+		this.client = client;
 	}
 	
 	public float montantHT() {
@@ -56,10 +68,7 @@ public class Facture {
 	public void supprimer(Produit p) {
 		List<Produit> listSecour = new ArrayList<>();
 		for(int i=0; i<produits.size();i++) {
-			// comparaidon de reference, donc sera toujours false, songe à redefinir la méthode "equals" dans Produit
-			// tu pouvais à la place utiliser la méthode "contains" de l'objet List
-			// pense à réecrire cette méthode
-			if(produits.get(i)==p) continue;
+			if(produits.get(i).equals(p)) continue;
 			else listSecour.add(produits.get(i));
 		}
 		for(int i=0; i<produits.size();i++) {
